@@ -35,13 +35,14 @@ service:
   port: 80
 
 ingress:
-  enabled: false
-  annotations: {}
-    # kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
+  enabled: true
+  annotations:
+    alb.ingress.kubernetes.io/backend-protocol: HTTP
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP":80}]'
   hosts:
-    - host: chart-example.local
-      paths: []
+    - host: simple.devopsland.site
+      paths: 
+        - /
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
