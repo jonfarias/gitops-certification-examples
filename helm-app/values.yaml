@@ -41,6 +41,7 @@ ingress:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP":80},{"HTTPS":443}]'
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:038125968719:certificate/c24c5cfb-b24f-40fd-a1bd-e83016a20ae9
   hosts:
     - host: simple.devopsland.site
       paths: 
